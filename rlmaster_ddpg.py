@@ -9,9 +9,7 @@ EPISODES = 100000
 TEST = 10
 
 def main():
-    #env = filter_env.makeFilteredEnv(msenv.get_environment())
-    env = msenv.get_environment()
-    
+    env = filter_env.makeFilteredEnv(msenv.get_environment())
     agent = DDPG(env)
     env = gym.wrappers.Monitor(env, 'experiments/' + ENV_NAME, force=True)
 
